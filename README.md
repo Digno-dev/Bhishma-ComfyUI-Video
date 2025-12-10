@@ -54,15 +54,24 @@ Bhishma-ComfyUI-Video/
 
 2. **Wan 2.1 Model Installation**
    ```bash
-   # Download Wan 2.1 models
+   # Navigate to ComfyUI models directory
    cd ComfyUI/models/checkpoints/
    
-   # Download T2V model
-   wget [Wan 2.1 T2V model URL]
+   # Download Wan 2.1 models from official sources
+   # Option 1: From Hugging Face (if available)
+   # huggingface-cli download [model-repository] --local-dir ./
    
-   # Download I2V model
-   wget [Wan 2.1 I2V model URL]
+   # Option 2: Manual download
+   # Visit the official Wan 2.1 repository or model hosting platform
+   # Download both T2V (Text-to-Video) and I2V (Image-to-Video) models
+   # Place the model files in ComfyUI/models/checkpoints/
+   
+   # Expected files:
+   # - wan_2.1_t2v.safetensors (or .ckpt)
+   # - wan_2.1_i2v.safetensors (or .ckpt)
    ```
+   
+   **Note**: Check the official Wan 2.1 documentation or ComfyUI community forums for the latest model download links and installation instructions.
 
 3. **FFmpeg Installation**
    ```bash
