@@ -101,7 +101,7 @@
 
 ### Scene 46-48: Lying on Arrows (30 seconds)
 **Visual**: Bhishma on bed of arrows, waiting
-**Prompt": "Bhishma lying on bed of arrows, arrows supporting his body above ground, serene expression despite pain, sunset lighting, divine waiting period, mythological scene, detailed arrow formation"
+**Prompt**: "Bhishma lying on bed of arrows, arrows supporting his body above ground, serene expression despite pain, sunset lighting, divine waiting period, mythological scene, detailed arrow formation"
 **Negative**: "comfortable position, low quality, no arrows"
 **Camera**: Slow pan around the scene
 
@@ -119,7 +119,7 @@
 
 ### Scene 54-55: The Departure (20 seconds)
 **Visual**: Soul leaving body
-**Prompt": "Bhishma's soul ascending from body on arrow bed, ethereal spirit form, golden light, celestial beings welcoming, peaceful expression, divine departure, mythological ascension, transcendent moment"
+**Prompt**: "Bhishma's soul ascending from body on arrow bed, ethereal spirit form, golden light, celestial beings welcoming, peaceful expression, divine departure, mythological ascension, transcendent moment"
 **Negative**: "dark scene, low quality, unclear spirit"
 **Camera**: Ascending shot following soul
 
