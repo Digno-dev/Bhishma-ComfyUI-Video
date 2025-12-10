@@ -1,0 +1,23 @@
+{
+  "nodes": {
+    "1": {"inputs": {"ckpt_name": "wan2.1_t2v_1.3B_fp16.safetensors"}, "class_type": "CheckpointLoader"},
+    "2": {"inputs": {"text": "Epic cinematic portrait of Bhishma from Mahabharata, majestic elderly warrior with flowing white beard and long silver hair, wearing golden royal armor with intricate celestial patterns, holding massive Trishul weapon, standing proudly on Kurukshetra battlefield at golden hour sunset, dramatic volumetric lighting, dynamic slow camera pan upward revealing fierce determined eyes, ancient Indian architecture background, highly detailed face with wisdom lines, 8K cinematic masterpiece, smooth motion 24fps"}, "class_type": "CLIPTextEncode"},
+    "3": {"inputs": {"text": "blurry, deformed, modern clothing, cartoonish, low quality, artifacts, distorted"}, "class_type": "CLIPTextEncode"},
+    "4": {"inputs": {"width": 1024, "height": 576, "length": 16, "batch_size": 1}, "class_type": "EmptyHunyuanLatentVideo"},
+    "5": {"inputs": {"seed": 42, "steps": 25, "cfg": 7.5, "sampler_name": "euler", "scheduler": "normal"}, "class_type": "KSampler"},
+    "6": {"inputs": {"samples": ["5", 0]}, "class_type": "VAEDecode"},
+    "7": {"inputs": {"images": ["6", 0], "fps": 24, "format": "video/mp4"}, "class_type": "VHS_VideoCombine"}
+  },
+  "links": [
+    [1, 1, 0, 2, 0],
+    [2, 1, 0, 3, 0],
+    [3, 2, 0, 5, 0],
+    [4, 3, 0, 5, 1],
+    [5, 4, 0, 5, 2],
+    [6, 5, 0, 6, 0],
+    [7, 6, 0, 7, 0]
+  ],
+  "groups": [],
+  "config": {},
+  "version": 0.4
+}
