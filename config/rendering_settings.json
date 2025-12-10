@@ -1,0 +1,152 @@
+{
+  "rendering_config": {
+    "project_name": "Bhishma Epic - 10 Minute Video",
+    "version": "1.0",
+    "description": "Rendering configuration for stitching 60 video segments into a 10-minute epic"
+  },
+  "video_settings": {
+    "total_duration_seconds": 600,
+    "segment_count": 60,
+    "segment_duration_seconds": 10,
+    "resolution": {
+      "width": 1280,
+      "height": 720,
+      "aspect_ratio": "16:9"
+    },
+    "frame_rate": 24,
+    "total_frames": 14400
+  },
+  "segment_naming": {
+    "pattern": "bhishma_segment_{segment_number:03d}.mp4",
+    "examples": [
+      "bhishma_segment_001.mp4",
+      "bhishma_segment_002.mp4",
+      "bhishma_segment_060.mp4"
+    ]
+  },
+  "output_settings": {
+    "final_output_name": "Bhishma_Epic_Final.mp4",
+    "output_directory": "output/final/",
+    "segments_directory": "output/segments/",
+    "temp_directory": "output/temp/"
+  },
+  "encoding": {
+    "codec": "h264",
+    "profile": "high",
+    "preset": "slow",
+    "crf": 18,
+    "bitrate": "8M",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "pixel_format": "yuv420p"
+  },
+  "stitching": {
+    "method": "ffmpeg_concat",
+    "transition_type": "cross_dissolve",
+    "transition_duration_seconds": 1,
+    "use_concat_demuxer": true,
+    "enable_scene_detection": false
+  },
+  "quality": {
+    "deinterlace": false,
+    "denoise": false,
+    "sharpen": false,
+    "color_correction": true,
+    "stabilization": false
+  },
+  "audio": {
+    "background_music": {
+      "enabled": true,
+      "file": "assets/audio/bhishma_theme.mp3",
+      "volume": 0.3,
+      "fade_in_seconds": 3,
+      "fade_out_seconds": 5
+    },
+    "sound_effects": {
+      "enabled": true,
+      "directory": "assets/audio/sfx/",
+      "sync_with_segments": true
+    },
+    "narration": {
+      "enabled": false,
+      "file": null
+    }
+  },
+  "act_markers": {
+    "act_1": {
+      "name": "Introduction & Youth",
+      "start_segment": 1,
+      "end_segment": 15,
+      "start_time": 0,
+      "end_time": 150
+    },
+    "act_2": {
+      "name": "The Guardian Years",
+      "start_segment": 16,
+      "end_segment": 30,
+      "start_time": 150,
+      "end_time": 300
+    },
+    "act_3": {
+      "name": "Kurukshetra War",
+      "start_segment": 31,
+      "end_segment": 45,
+      "start_time": 300,
+      "end_time": 450
+    },
+    "act_4": {
+      "name": "The Bed of Arrows",
+      "start_segment": 46,
+      "end_segment": 55,
+      "start_time": 450,
+      "end_time": 550
+    },
+    "act_5": {
+      "name": "Legacy",
+      "start_segment": 56,
+      "end_segment": 60,
+      "start_time": 550,
+      "end_time": 600
+    }
+  },
+  "color_grading": {
+    "act_1": {
+      "preset": "warm_nostalgic",
+      "saturation": 1.1,
+      "brightness": 1.05,
+      "contrast": 1.0
+    },
+    "act_2": {
+      "preset": "neutral_regal",
+      "saturation": 1.0,
+      "brightness": 1.0,
+      "contrast": 1.05
+    },
+    "act_3": {
+      "preset": "desaturated_war",
+      "saturation": 0.9,
+      "brightness": 0.95,
+      "contrast": 1.15
+    },
+    "act_4": {
+      "preset": "ethereal_spiritual",
+      "saturation": 1.2,
+      "brightness": 1.1,
+      "contrast": 0.95
+    },
+    "act_5": {
+      "preset": "divine_golden",
+      "saturation": 1.15,
+      "brightness": 1.15,
+      "contrast": 1.0
+    }
+  },
+  "metadata": {
+    "title": "Bhishma: The Grandfather of Kurukshetra",
+    "description": "Epic retelling of Bhishma's legendary story from the Mahabharata",
+    "author": "Bhishma-ComfyUI-Video Project",
+    "creation_date": "2025-12-10",
+    "genre": "Epic Mythology",
+    "tags": ["Mahabharata", "Bhishma", "Indian Mythology", "Epic", "AI Generated"]
+  }
+}

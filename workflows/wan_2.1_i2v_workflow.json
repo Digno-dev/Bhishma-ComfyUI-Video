@@ -1,0 +1,131 @@
+{
+  "workflow_name": "Wan 2.1 Image-to-Video Workflow",
+  "version": "2.1",
+  "description": "ComfyUI workflow for generating video from image and text prompts using Wan 2.1 model",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "properties": {
+        "name": "Input Image",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 2,
+      "type": "TextPromptInput",
+      "properties": {
+        "name": "Motion Prompt",
+        "multiline": true,
+        "default_value": "camera pans slowly, Bhishma stands heroically"
+      }
+    },
+    {
+      "id": 3,
+      "type": "TextPromptInput",
+      "properties": {
+        "name": "Negative Prompt",
+        "multiline": true,
+        "default_value": "static, no movement, low quality, blurry"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Wan21ModelLoader",
+      "properties": {
+        "model_name": "wan_2.1_i2v",
+        "precision": "fp16",
+        "device": "cuda"
+      }
+    },
+    {
+      "id": 5,
+      "type": "ImagePreprocessor",
+      "properties": {
+        "resize_mode": "stretch",
+        "target_width": 1280,
+        "target_height": 720,
+        "interpolation": "lanczos"
+      },
+      "inputs": {
+        "image": 1
+      }
+    },
+    {
+      "id": 6,
+      "type": "VideoGenerationSettings",
+      "properties": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_seconds": 10,
+        "num_frames": 240,
+        "seed": -1,
+        "steps": 25,
+        "cfg_scale": 7.0,
+        "sampler": "euler",
+        "scheduler": "normal"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Wan21ImageToVideo",
+      "properties": {
+        "batch_size": 1,
+        "motion_strength": 0.7,
+        "image_conditioning_scale": 0.9,
+        "quality_preset": "high"
+      },
+      "inputs": {
+        "model": 4,
+        "image": 5,
+        "motion_prompt": 2,
+        "negative_prompt": 3,
+        "settings": 6
+      }
+    },
+    {
+      "id": 8,
+      "type": "VideoPreview",
+      "properties": {
+        "format": "mp4",
+        "codec": "h264",
+        "quality": "high"
+      },
+      "inputs": {
+        "video": 7
+      }
+    },
+    {
+      "id": 9,
+      "type": "SaveVideo",
+      "properties": {
+        "output_path": "output/",
+        "filename_prefix": "bhishma_i2v_",
+        "format": "mp4",
+        "codec": "h264",
+        "bitrate": "8M"
+      },
+      "inputs": {
+        "video": 7
+      }
+    }
+  ],
+  "connections": [
+    {"from": 1, "to": 5, "from_slot": "image", "to_slot": "image"},
+    {"from": 2, "to": 7, "from_slot": "output", "to_slot": "motion_prompt"},
+    {"from": 3, "to": 7, "from_slot": "output", "to_slot": "negative_prompt"},
+    {"from": 4, "to": 7, "from_slot": "model", "to_slot": "model"},
+    {"from": 5, "to": 7, "from_slot": "image", "to_slot": "image"},
+    {"from": 6, "to": 7, "from_slot": "settings", "to_slot": "settings"},
+    {"from": 7, "to": 8, "from_slot": "video", "to_slot": "video"},
+    {"from": 7, "to": 9, "from_slot": "video", "to_slot": "video"}
+  ],
+  "metadata": {
+    "author": "Bhishma-ComfyUI-Video",
+    "created": "2025-12-10",
+    "comfyui_version": ">=0.1.0",
+    "required_models": ["wan_2.1_i2v"],
+    "required_nodes": ["Wan21ModelLoader", "Wan21ImageToVideo"]
+  }
+}

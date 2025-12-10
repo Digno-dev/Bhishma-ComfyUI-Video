@@ -1,0 +1,106 @@
+{
+  "workflow_name": "Wan 2.1 Text-to-Video Workflow",
+  "version": "2.1",
+  "description": "ComfyUI workflow for generating video from text prompts using Wan 2.1 model",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "TextPromptInput",
+      "properties": {
+        "name": "Positive Prompt",
+        "multiline": true,
+        "default_value": "epic cinematic scene, Bhishma the great warrior"
+      }
+    },
+    {
+      "id": 2,
+      "type": "TextPromptInput",
+      "properties": {
+        "name": "Negative Prompt",
+        "multiline": true,
+        "default_value": "low quality, blurry, distorted, watermark"
+      }
+    },
+    {
+      "id": 3,
+      "type": "Wan21ModelLoader",
+      "properties": {
+        "model_name": "wan_2.1_t2v",
+        "precision": "fp16",
+        "device": "cuda"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VideoGenerationSettings",
+      "properties": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_seconds": 10,
+        "num_frames": 240,
+        "seed": -1,
+        "steps": 30,
+        "cfg_scale": 7.5,
+        "sampler": "euler_ancestral",
+        "scheduler": "normal"
+      }
+    },
+    {
+      "id": 5,
+      "type": "Wan21TextToVideo",
+      "properties": {
+        "batch_size": 1,
+        "motion_strength": 0.8,
+        "quality_preset": "high"
+      },
+      "inputs": {
+        "model": 3,
+        "positive_prompt": 1,
+        "negative_prompt": 2,
+        "settings": 4
+      }
+    },
+    {
+      "id": 6,
+      "type": "VideoPreview",
+      "properties": {
+        "format": "mp4",
+        "codec": "h264",
+        "quality": "high"
+      },
+      "inputs": {
+        "video": 5
+      }
+    },
+    {
+      "id": 7,
+      "type": "SaveVideo",
+      "properties": {
+        "output_path": "output/",
+        "filename_prefix": "bhishma_t2v_",
+        "format": "mp4",
+        "codec": "h264",
+        "bitrate": "8M"
+      },
+      "inputs": {
+        "video": 5
+      }
+    }
+  ],
+  "connections": [
+    {"from": 1, "to": 5, "from_slot": "output", "to_slot": "positive_prompt"},
+    {"from": 2, "to": 5, "from_slot": "output", "to_slot": "negative_prompt"},
+    {"from": 3, "to": 5, "from_slot": "model", "to_slot": "model"},
+    {"from": 4, "to": 5, "from_slot": "settings", "to_slot": "settings"},
+    {"from": 5, "to": 6, "from_slot": "video", "to_slot": "video"},
+    {"from": 5, "to": 7, "from_slot": "video", "to_slot": "video"}
+  ],
+  "metadata": {
+    "author": "Bhishma-ComfyUI-Video",
+    "created": "2025-12-10",
+    "comfyui_version": ">=0.1.0",
+    "required_models": ["wan_2.1_t2v"],
+    "required_nodes": ["Wan21ModelLoader", "Wan21TextToVideo"]
+  }
+}
