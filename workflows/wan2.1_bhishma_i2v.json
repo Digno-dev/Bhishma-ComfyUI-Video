@@ -1,0 +1,26 @@
+{
+  "nodes": {
+    "1": {"inputs": {"ckpt_name": "wan2.1_i2v_1.3B_fp16.safetensors"}, "class_type": "CheckpointLoader"},
+    "2": {"inputs": {"image": "bhishma_reference.png"}, "class_type": "LoadImage"},
+    "3": {"inputs": {"clip_name": "clip_vision_h.safetensors"}, "class_type": "LoadCLIPVision"},
+    "4": {"inputs": {"text": "Bhishma slowly raises his Trishul weapon, wind blows his royal robes and silver hair, intense gaze forward, sacred golden aura surrounds him, warrior pose, epic slow-motion cinematic movement, dramatic lighting changes"}, "class_type": "CLIPTextEncode"},
+    "5": {"inputs": {"text": "blurry, static, low quality, distorted movement"}, "class_type": "CLIPTextEncode"},
+    "6": {"inputs": {"width": 1024, "height": 576, "length": 20, "batch_size": 1}, "class_type": "EmptyHunyuanLatentVideo"},
+    "7": {"inputs": {"seed": 42, "steps": 30, "cfg": 8.0, "sampler_name": "euler", "scheduler": "normal"}, "class_type": "KSampler"},
+    "8": {"inputs": {"samples": ["7", 0]}, "class_type": "VAEDecode"},
+    "9": {"inputs": {"images": ["8", 0], "fps": 24, "format": "video/mp4"}, "class_type": "VHS_VideoCombine"}
+  },
+  "links": [
+    [1, 1, 0, 4, 0],
+    [2, 1, 0, 5, 0],
+    [3, 2, 0, 7, 2],
+    [4, 4, 0, 7, 0],
+    [5, 5, 0, 7, 1],
+    [6, 6, 0, 7, 3],
+    [7, 7, 0, 8, 0],
+    [8, 8, 0, 9, 0]
+  ],
+  "groups": [],
+  "config": {},
+  "version": 0.4
+}
