@@ -1,0 +1,91 @@
+# Bhishma Mahabharata - 10-Minute Video Project
+# Complete Scene Scripts and Prompts for ComfyUI
+
+## PROJECT OVERVIEW
+A cinematic 10-minute AI-generated video depicting the legendary warrior Bhishma from Mahabharata.
+Using Wan 2.1/2.2 video models (T2V & I2V) with 30+ segments, each 20-25 seconds.
+
+## SEGMENT 1-3: INTRODUCTION & CHARACTER REVEAL (60 seconds)
+### Segment 1: Ethereal Entry (0-20s)
+PROMPT: "Bhishma materializes from divine golden light, epic 8-bit cosmic energy swirls around majestic elderly warrior with long flowing white beard and silver hair, wearing ornate golden royal armor with celestial Sanskrit patterns, Trishul weapon glowing with sacred power, Kurukshetra battlefield at dusk with ancient temples, cinematic volumetric lighting, slow upward camera pan revealing intense fierce determined eyes of eternal warrior, 8K ultra quality"
+NEGATIVE: "modern, cartoonish, blurry, distorted, low quality"
+FRAMES: 20 | CFG: 8.0 | STEPS: 30 | SEED: 42
+
+### Segment 2: Standing in Glory (20-40s)
+PROMPT: "Wide shot of Bhishma standing proudly on ancient battlefield, golden sunset light illuminates his majestic form, wind blows his royal dhoti and silvery hair dramatically, Trishul held vertically across his body, Sanskrit tattoos glowing on skin, surrounding warriors in blurred background, temple spires visible, dynamic cinematic camera rotation, atmospheric dust particles, warm golden-orange color grading, epic orchestral moment"
+NEGATIVE: "static, low quality, modern elements, distorted"
+FRAMES: 20 | CFG: 7.5 | STEPS: 30 | SEED: 43
+
+### Segment 3: Close-up Wisdom (40-60s)
+PROMPT: "Extreme close-up of Bhishma's ancient wise face, piercing eyes filled with cosmic knowledge and sorrow, silver beard flows naturally, golden armor details visible in background, single shaft of sunlight illuminates his features, subtle glowing aura around head, wise expression showing centuries of experience, slow camera pan revealing intricate facial features, weathered but noble face, 8K detail"
+NEGATIVE: "blurry, cartoonish, distorted features"
+FRAMES: 20 | CFG: 8.0 | STEPS: 30 | SEED: 44
+
+## SEGMENT 4-6: WARRIOR MANIFESTATION (60 seconds)
+### Segment 4: Trishul Activation
+PROMPT: "Bhishma slowly raises massive Trishul weapon above head, sacred cosmic energy crackles around the prongs, blue and gold lightning arcs through the air, his muscles tense with divine power, wind swirls violently around him, his eyes glow with ancient warrior might, Kurukshetra battlefield trembles beneath, dramatic low-angle camera shot, epic cinematic lighting"
+NEGATIVE: "static, blurry, distorted weapon"
+FRAMES: 22 | CFG: 8.0 | STEPS: 35 | SEED: 45
+
+### Segment 5: Battle Ready Stance
+PROMPT: "Bhishma adopts warrior battle stance, Trishul held diagonally across body, legs positioned in powerful mudra, armor reflects golden sunlight, his aura expands outward, celestial weapons materialize around him, battlefield dust rises dramatically, camera rotates around his form showing full warrior regalia, Sanskrit symbols glow on armor, epic heroic music moment"
+NEGATIVE: "cartoonish, blurry, static"
+FRAMES: 22 | CFG: 7.5 | STEPS: 30 | SEED: 46
+
+### Segment 6: Celestial Transformation
+PROMPT: "Bhishma's form shimmers with divine power, golden-blue celestial light surrounds his entire body, cosmic Sanskrit mantras swirl around him, he becomes partially translucent showing divine energy within, Trishul glows with pure white light, heavens seem to open above revealing devas watching, atmospheric clouds swirl, cinematic divine lighting"
+NEGATIVE: "dark, distorted, low quality"
+FRAMES: 22 | CFG: 8.0 | STEPS: 35 | SEED: 47
+
+## SEGMENT 7-10: BATTLEFIELD MEMORIES (80 seconds)
+### Segment 7: Kurukshetra Memory Flash
+PROMPT: "Scene transitions to ancient Kurukshetra battlefield, thousands of ancient warriors in formation, Bhishma mounted on celestial chariot visible in distance, Mahabharata war beginning with dramatic sky filled with arrows, ashoka trees on horizon, dust and smoke rising, warm sepia-gold color grade, cinematic wide establishing shot, epic war moment"
+NEGATIVE: "modern, blurry, cartoonish"
+FRAMES: 25 | CFG: 8.0 | STEPS: 35 | SEED: 48
+
+### Segment 8: Past Glory
+PROMPT: "Young mighty Bhishma in his prime (flashback), commanding massive armies from armored chariot, celestial weapons creating trails of light, thousands of soldiers following his orders, kingdom prosperity around him, magnificent ancient Indian palaces in background, golden prosperity lighting, flags and banners waving, epic historical drama"
+NEGATIVE: "modern, distorted, low quality"
+FRAMES: 25 | CFG: 7.5 | STEPS: 30 | SEED: 49
+
+### Segment 9: Sacrifice Moment
+PROMPT: "Bhishma accepting his destiny, glowing arrow piercing his immortal form, cosmic pain visible in his expression, he falls backward onto bed of arrows (Shayana), warriors gathered around mourning, heavens opening with divine light, his soul ascending as pure golden light, temples and sacred rituals around, deeply emotional cinematic moment"
+NEGATIVE: "cartoonish, distorted, blurry"
+FRAMES: 25 | CFG: 8.5 | STEPS: 40 | SEED: 50
+
+### Segment 10: Return to Present
+PROMPT: "Scene transitions back to present-day Bhishma returning to standing position on Kurukshetra, surrounded by ethereal divine light, ghost-like ancestors visible around him, his eyes open with fresh cosmic power, reborn spiritual energy, sunset intensifying in background, wind swirling dramatically, bridging past and present"
+NEGATIVE: "distorted, blurry, low quality"
+FRAMES: 25 | CFG: 8.0 | STEPS: 35 | SEED: 51
+
+## SEGMENT 11-15: PHILOSOPHICAL REVELATION (100 seconds)
+### Segment 11: Ancient Teachings
+PROMPT: "Bhishma surrounded by glowing Sanskrit verses floating in air (Bhagavad Gita-inspired), wisdom flowing from his being as light, serene meditative expression, sacred Dharma wheel rotating in background, lotus flowers materializing around him, golden meditation light, temples visible far away, deeply spiritual cinema"
+NEGATIVE: "dark, blurry, chaotic"
+FRAMES: 25 | CFG: 8.0 | STEPS: 35 | SEED: 52
+
+### Segment 12: Divine Connection
+PROMPT: "Bhishma's consciousness expanding, connection to cosmic divine energy shown as golden threads connecting him to sky, stars, and universe, his form becoming partially ethereal, celestial beings (devas) visible around him, cosmic perspective showing his role in larger tapestry, deeply mystical cinematic lighting"
+NEGATIVE: "cartoonish, distorted"
+FRAMES: 25 | CFG: 8.5 | STEPS: 40 | SEED: 53
+
+### Segment 13: Inner Glow
+PROMPT: "Close-up: Bhishma's third eye opens with blinding cosmic light, ancient power flowing through his form, his heart chakra glowing brilliantly, whole body radiating golden-white light, inner peace and cosmic knowledge visible on his face, spiritual transformation happening in real-time, deeply meditative moment"
+NEGATIVE: "blurry, distorted, cartoonish"
+FRAMES: 25 | CFG: 8.0 | STEPS: 35 | SEED: 54
+
+### Segment 14: Truth Manifestation
+PROMPT: "Around Bhishma, visual manifestations of truth appear: ancient Sanskrit sutras, divine geometry, cosmic patterns, celestial beings, all synchronized in harmony, his Trishul becomes portal to divine realms, camera flies through cosmic dimensions, epic spiritual cinematography"
+NEGATIVE: "chaotic, distorted, low quality"
+FRAMES: 25 | CFG: 8.5 | STEPS: 40 | SEED: 55
+
+### Segment 15: Eternal Guardian
+PROMPT: "Bhishma returns to physical form, standing as eternal guardian of dharma on Kurukshetra, protective golden aura extending far around him, his eyes gazing at distant future with ancient wisdom, role as cosmic protector evident, battlefield transforms into peaceful sacred space around his presence"
+NEGATIVE: "violent, chaotic, modern"
+FRAMES: 25 | CFG: 8.0 | STEPS: 35 | SEED: 56
+
+## REMAINING SEGMENTS 16-30+
+[Additional 15+ segments covering: Grand Finale (golden explosion of energy), Ascension sequence, Multi-dimensional Bhishma forms, Celestial Archives appearance, Final Blessing, Return to Silence, etc.]
+
+Each segment: 20-25 frames, 24fps output, 1024x576 resolution
+Total duration: ~10 minutes continuous narrative
