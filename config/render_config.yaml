@@ -1,0 +1,89 @@
+# Bhishma ComfyUI Video Rendering Configuration
+# 10-Minute Video Project with Wan 2.1/2.2
+
+project:
+  name: "Bhishma Mahabharata"
+  duration_minutes: 10
+  total_segments: 30
+  output_format: "mp4"
+  target_fps: 24
+
+video_settings:
+  resolution: "1024x576"
+  fps: 24
+  codec: "h264"
+  bitrate: "8000k"
+  quality: "high"
+  color_depth: "8-bit"
+
+models:
+  diffusion:
+    - name: "wan2.1_t2v_1.3B_fp16"
+      type: "text-to-video"
+      vram_required_mb: 8000
+    - name: "wan2.1_i2v_1.3B_fp16"
+      type: "image-to-video"
+      vram_required_mb: 8500
+  text_encoder:
+    name: "umt5_xxl_fp8_e4m3fn_scaled"
+    vram_required_mb: 3000
+  vae:
+    name: "wan_2.1_vae"
+    vram_required_mb: 2000
+  clip_vision: "clip_vision_h.safetensors"
+
+generation_params:
+  steps: 30
+  cfg_scale: 7.5-8.5
+  sampler: "euler"
+  scheduler: "normal"
+  seed_base: 42
+  frames_per_segment: 20-25
+
+segment_config:
+  overlap_frames: 3
+  fade_duration_frames: 2
+  transition_type: "seamless"
+  motion_bucket: 255
+
+workflow_paths:
+  t2v_template: "workflows/wan2.1_bhishma_t2v.json"
+  i2v_template: "workflows/wan2.1_bhishma_i2v.json"
+  
+prompt_source:
+  scenes: "prompts/bhishma_scene_scripts.txt"
+  character_reference: "assets/bhishma_reference.png"
+
+output_settings:
+  output_directory: "output/"
+  segments_dir: "output/segments/"
+  final_video: "output/bhishma_final_10min.mp4"
+  logs_dir: "logs/"
+  backup_dir: "backups/"
+
+optimization:
+  use_fp8_quantization: true
+  memory_efficient: true
+  chunk_processing: true
+  parallel_segments: 1
+  gpu_device: 0
+
+post_processing:
+  upscale_factor: 1.0
+  frame_interpolation: false
+  color_grading: true
+  denoise: true
+  audio_sync: true
+
+monitor:
+  log_level: "INFO"
+  save_intermediates: true
+  progress_reporting: true
+  estimated_render_time_hours: 18-24
+
+dependencies:
+  - comfyui >= 0.3.68
+  - torch >= 2.0.0
+  - opencv-python
+  - numpy
+  - pyyaml
